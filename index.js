@@ -15,13 +15,13 @@ const loadCatagory = async () => {
         const div=document.createElement('div')
 
         div.innerHTML=`
-        <button class="btn btn-ghost tab tab-active"> ${cat.category}</button>
+        <button onclick="catagoryId('${cat.category_id}')" class="btn btn-ghost tab tab-active"> ${cat.category}</button>
         `
 
         fourButton.appendChild(div);
 
     });
-    defaltid();
+    // defaltid();
 
   }
 
@@ -73,12 +73,14 @@ const loadCatagory = async () => {
   loadCatagory();
 
 
-  const defaltid=async(id)=>{
-    console.log(id);
-    const rea = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`);
+  const catagoryId=async(catagoryId)=>{
+    console.log(catagoryId);
+    const rea = await fetch(`https://openapi.programming-hero.com/api/videos/category/${catagoryId}`);
     const data = await rea.json();
     const catagory = data.data;
-    console.log(catagory);
+    // console.log(catagory);
+
+    
 
   }
-  defaltid(id);
+  catagoryId();
