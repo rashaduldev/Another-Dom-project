@@ -79,6 +79,9 @@ const loadCatagory = async () => {
     const data = await rea.json();
     const catagory = data.data;
     // console.log(catagory);
+     catagory.forEach(id=>{
+      console.log(id);
+     })
 
     
 
