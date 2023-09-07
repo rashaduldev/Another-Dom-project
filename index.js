@@ -42,9 +42,16 @@ const loadCatagory = async () => {
     <img src="${catt.thumbnail}" alt="Shoes" class="rounded-xl h-64 w-full" />
   </figure>
   <div class="card-body">
-    <h2 class="card-title">${catt.title}</h2>
-    <p>${catt.authors[0].profile_name}</p>
-    <p>${catt.others.views}</p>
+   <div class="flex gap-4">
+        <div class=""><img src="${catt.authors[0].profile_picture}" alt="Shoes" class="rounded-full h-10 w-10" /></div>
+        <div>
+        <h2 class="card-title mb-3">${catt.title}</h2>
+        <p>${catt.authors[0].profile_name}</p>
+        <p>${catt.others.views}</p>
+        </div>
+  
+   </div>
+  
    
   </div>
 </div>
