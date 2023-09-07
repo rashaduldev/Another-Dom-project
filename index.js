@@ -21,6 +21,8 @@ const loadCatagory = async () => {
         fourButton.appendChild(div);
 
     });
+    defaltid();
+
   }
 
 
@@ -46,7 +48,12 @@ const loadCatagory = async () => {
         <div class=""><img src="${catt.authors[0].profile_picture}" alt="Shoes" class="rounded-full h-10 w-10" /></div>
         <div>
         <h2 class="card-title mb-3">${catt.title}</h2>
-        <p>${catt.authors[0].profile_name}</p>
+       <div class="flex items-center gap-5">
+       <p>${catt.authors[0].profile_name}</p>
+      
+       ${catt.authors[0].verified?`<i class="fa-solid fa-circle-check"></i>`:''}
+       
+       </div>
         <p>${catt.others.views}</p>
         </div>
   
@@ -60,5 +67,18 @@ const loadCatagory = async () => {
     })
     // displayCatagory(catagory);
   }
+
+
   displayProduct();
   loadCatagory();
+
+
+  const defaltid=async(id)=>{
+    console.log(id);
+    const rea = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`);
+    const data = await rea.json();
+    const catagory = data.data;
+    console.log(catagory);
+
+  }
+  defaltid(id);
